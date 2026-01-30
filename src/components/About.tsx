@@ -1,0 +1,109 @@
+import { Users, Target, Award, History } from 'lucide-react';
+
+const About = () => {
+  return (
+    <section id="sobre" className="py-24 bg-gradient-section">
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-16 animate-fade-in">
+          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
+            Nossa história
+          </span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
+            Sobre a Berti Baterias
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            Há 20 anos no mercado buscando trazer cada dia mais qualidade e agilidade em nossos serviços.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* History */}
+          <div className="space-y-6 animate-fade-in-left">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-primary/10">
+                <History className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-display font-bold text-foreground mb-2">
+                  Nossa trajetória
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Fundada por Edson Luiz Berti no ano de 2006, começou uma história na cidade de Blumenau. 
+                  Administrou a empresa buscando sempre atender e trabalhar da melhor forma possível, 
+                  atendendo os clientes e crescendo a cada dia.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-primary/10">
+                <Users className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-display font-bold text-foreground mb-2">
+                  Nova geração
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Em outubro de 2020, entregou a Berti Baterias ao seu filho Diego Luiz Berti, 
+                  que administra até os dias atuais. A empresa cresceu e aumentou sua gama de produtos, 
+                  hoje trabalhando com diversos acessórios automotivos.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-primary/10">
+                <Target className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-display font-bold text-foreground mb-2">
+                  Nosso compromisso
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Buscamos nos aperfeiçoar e aprender a cada dia, sempre prestando um bom atendimento 
+                  aos nossos clientes com qualidade, agilidade e preços justos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Values Cards */}
+          <div className="grid sm:grid-cols-2 gap-6 animate-fade-in-right">
+            <div className="bg-card p-6 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 border border-border">
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <Target className="h-7 w-7 text-primary" />
+              </div>
+              <h3 className="text-lg font-display font-bold text-foreground mb-2">Missão</h3>
+              <p className="text-muted-foreground text-sm">
+                Oferecer produtos e serviços de qualidade com agilidade e preço justo.
+              </p>
+            </div>
+
+            <div className="bg-card p-6 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 border border-border">
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <Award className="h-7 w-7 text-primary" />
+              </div>
+              <h3 className="text-lg font-display font-bold text-foreground mb-2">Visão</h3>
+              <p className="text-muted-foreground text-sm">
+                Ser referência em baterias e acessórios automotivos na região de Blumenau.
+              </p>
+            </div>
+
+            <div className="bg-card p-6 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 border border-border sm:col-span-2">
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <Users className="h-7 w-7 text-primary" />
+              </div>
+              <h3 className="text-lg font-display font-bold text-foreground mb-2">Valores</h3>
+              <p className="text-muted-foreground text-sm">
+                Honestidade, comprometimento, qualidade no atendimento e respeito aos nossos clientes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
