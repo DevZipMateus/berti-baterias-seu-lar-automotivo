@@ -1,6 +1,5 @@
 import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import storeFacade from '@/assets/store-facade.jpg';
 
 const Contact = () => {
   return (
@@ -22,14 +21,6 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-8 animate-fade-in-left">
-            {/* Store Image */}
-            <div className="rounded-2xl overflow-hidden shadow-card mb-8">
-              <img 
-                src={storeFacade} 
-                alt="Fachada da loja Berti Baterias e Acessórios Automotivos em Blumenau" 
-                className="w-full h-48 object-cover"
-              />
-            </div>
 
             {/* Address */}
             <div className="flex items-start gap-4">
