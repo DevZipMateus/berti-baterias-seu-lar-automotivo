@@ -21,7 +21,7 @@ const Vitrine = () => {
         className="w-full flex-1"
         style={{ 
           marginTop: '80px', 
-          height: 'calc(100vh - 80px - 63px)' 
+          height: 'calc(100vh - 80px)' 
         }}
       >
         <iframe 
@@ -31,9 +31,6 @@ const Vitrine = () => {
           title="Demonstração de Vitrine - Berti Baterias"
         />
       </main>
-
-      {/* Space reserved for MonteSite badge (63px) */}
-      <div className="h-[63px] w-full flex-shrink-0" />
     </div>
   );
 };
