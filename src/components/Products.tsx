@@ -1,6 +1,8 @@
 import { Battery, CircleDot, Droplets, Lightbulb, Car, Sparkles, ArrowUpDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import productsBg from '@/assets/products-bg.jpg';
+import batteriesCollection from '@/assets/batteries-collection.jpg';
+import accessoriesDisplay from '@/assets/accessories-display.jpg';
 
 const products = [
   {
@@ -68,6 +70,36 @@ const Products = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Trabalhamos com uma ampla variedade de produtos automotivos de alta qualidade.
           </p>
+        </div>
+
+        {/* Featured Images */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="relative rounded-2xl overflow-hidden shadow-card group">
+            <img 
+              src={batteriesCollection} 
+              alt="Coleção de baterias automotivas de diversos tamanhos" 
+              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+              <div>
+                <h3 className="text-white text-xl font-display font-bold">Baterias</h3>
+                <p className="text-white/80 text-sm">Para todos os tipos de veículos</p>
+              </div>
+            </div>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden shadow-card group">
+            <img 
+              src={accessoriesDisplay} 
+              alt="Display de acessórios automotivos incluindo calotas, tapetes e palhetas" 
+              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+              <div>
+                <h3 className="text-white text-xl font-display font-bold">Acessórios</h3>
+                <p className="text-white/80 text-sm">Variedade completa para seu carro</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Products Grid */}

@@ -1,6 +1,7 @@
 import { Battery, Car, Truck, Bike, Shield, Wrench, Zap, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import servicesBg from '@/assets/services-bg.jpg';
+import batteryInstallation from '@/assets/battery-installation.jpg';
 
 const services = [
   {
@@ -57,8 +58,18 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* Services Grid with Image */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          {/* Image Column */}
+          <div className="lg:row-span-2 animate-fade-in">
+            <img 
+              src={batteryInstallation} 
+              alt="Instalação profissional de bateria automotiva" 
+              className="rounded-2xl shadow-glow object-cover w-full h-full min-h-[300px]"
+            />
+          </div>
+
+          {/* Services Cards */}
           {services.map((service, index) => (
             <div
               key={service.title}
