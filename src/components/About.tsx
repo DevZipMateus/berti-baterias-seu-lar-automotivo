@@ -1,5 +1,7 @@
 import { Users, Target, Award, History } from 'lucide-react';
 import aboutBg from '@/assets/about-bg.jpg';
+import storeInterior from '@/assets/store-interior.jpg';
+import batteryTesting from '@/assets/battery-testing.jpg';
 
 const About = () => {
   return (
@@ -74,6 +76,20 @@ const About = () => {
                   aos nossos clientes com qualidade, agilidade e preços justos.
                 </p>
               </div>
+            </div>
+
+            {/* Image Gallery */}
+            <div className="grid grid-cols-2 gap-4 pt-6">
+              <img 
+                src={storeInterior} 
+                alt="Interior da loja Berti Baterias com prateleiras de produtos automotivos" 
+                className="rounded-xl shadow-card object-cover h-40 w-full"
+              />
+              <img 
+                src={batteryTesting} 
+                alt="Mecânico testando bateria automotiva com equipamento de diagnóstico" 
+                className="rounded-xl shadow-card object-cover h-40 w-full"
+              />
             </div>
           </div>
 
