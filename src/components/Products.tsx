@@ -1,5 +1,6 @@
-import { Battery, CircleDot, Droplets, Lightbulb, Car, Sparkles, ArrowUpDown } from 'lucide-react';
+import { Battery, CircleDot, Droplets, Lightbulb, Car, Sparkles, ArrowUpDown, ShoppingBag, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import productsBg from '@/assets/products-bg.jpg';
 import batteriesCollection from '@/assets/batteries-collection.jpg';
 import accessoriesDisplay from '@/assets/accessories-display.jpg';
@@ -97,6 +98,44 @@ const Products = () => {
               <div>
                 <h3 className="text-white text-xl font-display font-bold">Acessórios</h3>
                 <p className="text-white/80 text-sm">Variedade completa para seu carro</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Vitrine Section */}
+        <div className="mb-12 animate-fade-in">
+          <div className="bg-gradient-to-r from-primary to-accent rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
+            
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="flex-1 text-center md:text-left">
+                <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2 mb-4">
+                  <ShoppingBag className="h-4 w-4" />
+                  <span className="text-sm font-medium">Loja online</span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-display font-bold mb-3">
+                  Conheça nossa vitrine virtual
+                </h3>
+                <p className="text-white/80 text-lg mb-6 max-w-xl">
+                  Explore nossos produtos com preços, descrições e fotos. 
+                  Veja tudo o que temos disponível para você!
+                </p>
+                <Button size="lg" variant="secondary" asChild className="text-lg px-8">
+                  <Link to="/vitrine" className="inline-flex items-center gap-2">
+                    <ShoppingBag className="h-5 w-5" />
+                    Acessar vitrine
+                    <ExternalLink className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+              
+              <div className="flex-shrink-0">
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-white/20 flex items-center justify-center">
+                  <ShoppingBag className="w-16 h-16 md:w-20 md:h-20 text-white" />
+                </div>
               </div>
             </div>
           </div>
