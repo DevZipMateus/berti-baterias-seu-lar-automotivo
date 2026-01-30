@@ -1,10 +1,19 @@
 import { Star, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import testimonialsBg from '@/assets/testimonials-bg.jpg';
 
 const Testimonials = () => {
   return (
-    <section className="py-24 bg-gradient-dark text-white">
-      <div className="container mx-auto px-4">
+    <section className="relative py-24 text-white">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${testimonialsBg})` }}
+      >
+        <div className="absolute inset-0 bg-black/80" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Section Header */}
           <div className="mb-12 animate-fade-in">
@@ -20,7 +29,7 @@ const Testimonials = () => {
           </div>
 
           {/* Rating Display */}
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 animate-scale-in">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12 animate-scale-in">
             <div className="flex justify-center gap-2 mb-6">
               {[1, 2, 3, 4, 5].map((star) => (
                 <Star
@@ -43,7 +52,7 @@ const Testimonials = () => {
               Recomendo a todos!"
             </blockquote>
 
-            <Button size="lg" variant="outline" asChild className="border-white/30 text-white hover:bg-white/10 hover:text-white">
+            <Button size="lg" variant="outline" asChild className="border-white bg-white/20 text-white hover:bg-white hover:text-foreground">
               <a
                 href="https://share.google/7Zh0M2nopWEGuXxfw"
                 target="_blank"
