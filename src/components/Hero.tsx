@@ -36,7 +36,7 @@ const Hero = () => {
                   Solicite um orçamento
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg px-8 border-white/30 text-white hover:bg-white/10 hover:text-white">
+              <Button size="lg" variant="outline" asChild className="text-lg px-8 border-white bg-white/20 text-white hover:bg-white hover:text-foreground">
                 <a href="#servicos">
                   Nossos serviços
                 </a>
