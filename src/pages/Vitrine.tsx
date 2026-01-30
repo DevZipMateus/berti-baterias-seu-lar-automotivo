@@ -6,9 +6,20 @@ const Vitrine = () => {
     // Disable scrolling on the page
     document.body.style.overflow = 'hidden';
     
+    // Hide MonteSite badge on this page
+    const montesiteBadge = document.getElementById('montesite-footer-badge');
+    if (montesiteBadge) {
+      montesiteBadge.style.display = 'none';
+    }
+    
     return () => {
       // Re-enable scrolling when leaving the page
       document.body.style.overflow = 'auto';
+      
+      // Show MonteSite badge again when leaving
+      if (montesiteBadge) {
+        montesiteBadge.style.display = 'block';
+      }
     };
   }, []);
 
