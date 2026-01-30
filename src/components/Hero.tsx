@@ -1,5 +1,6 @@
-import { Battery, Zap, Shield, Clock } from 'lucide-react';
+import { Battery, Zap, Shield, Clock, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import heroBg from '@/assets/hero-bg.jpg';
 
 const Hero = () => {
@@ -50,6 +51,12 @@ const Hero = () => {
                 <a href="#servicos">
                   Nossos serviços
                 </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild className="text-lg px-8 border-primary bg-primary/20 text-white hover:bg-primary hover:text-primary-foreground">
+                <Link to="/vitrine" className="inline-flex items-center gap-2">
+                  <ShoppingBag className="h-5 w-5" />
+                  Ver vitrine
+                </Link>
               </Button>
             </div>
 
