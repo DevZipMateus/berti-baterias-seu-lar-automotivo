@@ -1,5 +1,6 @@
-import { Battery, CircleDot, Droplets, Lightbulb, Car, Sparkles, ArrowUpDown, SquareArrowOutUpRight } from 'lucide-react';
+import { Battery, CircleDot, Droplets, Lightbulb, Car, Sparkles, ArrowUpDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import productsBg from '@/assets/products-bg.jpg';
 
 const products = [
   {
@@ -46,8 +47,16 @@ const products = [
 
 const Products = () => {
   return (
-    <section id="produtos" className="py-24 bg-gradient-section">
-      <div className="container mx-auto px-4">
+    <section id="produtos" className="relative py-24">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${productsBg})` }}
+      >
+        <div className="absolute inset-0 bg-white/95" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
@@ -66,7 +75,7 @@ const Products = () => {
           {products.map((product, index) => (
             <div
               key={product.title}
-              className="group bg-card border border-border rounded-2xl p-6 hover:shadow-card-hover hover:border-primary/30 transition-all duration-300 animate-fade-in"
+              className="group bg-card/90 backdrop-blur-sm border border-border rounded-2xl p-6 hover:shadow-card-hover hover:border-primary/30 transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className="w-14 h-14 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center mb-4 transition-colors">

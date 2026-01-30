@@ -1,9 +1,18 @@
 import { Users, Target, Award, History } from 'lucide-react';
+import aboutBg from '@/assets/about-bg.jpg';
 
 const About = () => {
   return (
-    <section id="sobre" className="py-24 bg-gradient-section">
-      <div className="container mx-auto px-4">
+    <section id="sobre" className="relative py-24">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${aboutBg})` }}
+      >
+        <div className="absolute inset-0 bg-white/95" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
@@ -70,7 +79,7 @@ const About = () => {
 
           {/* Values Cards */}
           <div className="grid sm:grid-cols-2 gap-6 animate-fade-in-right">
-            <div className="bg-card p-6 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 border border-border">
+            <div className="bg-card/90 backdrop-blur-sm p-6 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 border border-border">
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                 <Target className="h-7 w-7 text-primary" />
               </div>
@@ -80,7 +89,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="bg-card p-6 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 border border-border">
+            <div className="bg-card/90 backdrop-blur-sm p-6 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 border border-border">
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                 <Award className="h-7 w-7 text-primary" />
               </div>
@@ -90,7 +99,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="bg-card p-6 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 border border-border sm:col-span-2">
+            <div className="bg-card/90 backdrop-blur-sm p-6 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 border border-border sm:col-span-2">
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                 <Users className="h-7 w-7 text-primary" />
               </div>

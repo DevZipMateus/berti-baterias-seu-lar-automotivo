@@ -1,5 +1,6 @@
 import { Battery, Car, Truck, Bike, Shield, Wrench, Zap, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import servicesBg from '@/assets/services-bg.jpg';
 
 const services = [
   {
@@ -33,8 +34,16 @@ const vehicleTypes = [
 
 const Services = () => {
   return (
-    <section id="servicos" className="py-24 bg-gradient-dark text-white">
-      <div className="container mx-auto px-4">
+    <section id="servicos" className="relative py-24 text-white">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${servicesBg})` }}
+      >
+        <div className="absolute inset-0 bg-black/85" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
@@ -53,7 +62,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 animate-fade-in"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
@@ -66,7 +75,7 @@ const Services = () => {
         </div>
 
         {/* Vehicle Types */}
-        <div className="bg-primary/10 border border-primary/20 rounded-3xl p-8 md:p-12">
+        <div className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-3xl p-8 md:p-12">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-display font-bold mb-2">
               Atendemos todos os tipos de veículos
