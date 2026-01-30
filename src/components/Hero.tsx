@@ -1,14 +1,24 @@
 import { Battery, Zap, Shield, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import heroBg from '@/assets/hero-bg.jpg';
 
 const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center bg-gradient-hero pt-20"
+      className="relative min-h-screen flex items-center pt-20"
     >
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/70" />
+      </div>
+
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-accent blur-3xl" />
       </div>
@@ -79,7 +89,7 @@ const Hero = () => {
           {/* Visual Element */}
           <div className="hidden lg:flex justify-center items-center animate-fade-in-right">
             <div className="relative">
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary/30 to-accent/20 flex items-center justify-center shadow-glow">
+              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary/30 to-accent/20 flex items-center justify-center shadow-glow backdrop-blur-sm">
                 <div className="w-64 h-64 rounded-full bg-gradient-to-br from-primary/50 to-accent/30 flex items-center justify-center">
                   <Battery className="w-32 h-32 text-white" strokeWidth={1.5} />
                 </div>
