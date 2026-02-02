@@ -10,27 +10,27 @@ const Hero = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
+        staggerChildren: 0.08,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
   const statsVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.95 },
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+      transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
@@ -44,36 +44,13 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
-        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/70" />
       </div>
 
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <motion.div 
-          className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.3, 0.2],
-          }}
-          transition={{ 
-            duration: 4,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-accent blur-3xl"
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            opacity: [0.3, 0.2, 0.3],
-          }}
-          transition={{ 
-            duration: 5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
+      {/* Background Pattern - Simplified */}
+      <div className="absolute inset-0 opacity-15 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-accent blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -111,17 +88,17 @@ const Hero = () => {
               variants={itemVariants}
               className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
             >
-              <Button size="lg" asChild className="text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto hover:scale-105 transition-transform">
+              <Button size="lg" asChild className="text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto transition-transform duration-200 hover:scale-[1.02]">
                 <a href="https://wa.me/554732321020" target="_blank" rel="noopener noreferrer">
                   Solicite um orçamento
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-base sm:text-lg px-6 sm:px-8 border-white bg-white/20 text-white hover:bg-white hover:text-foreground w-full sm:w-auto hover:scale-105 transition-transform">
+              <Button size="lg" variant="outline" asChild className="text-base sm:text-lg px-6 sm:px-8 border-white bg-white/20 text-white hover:bg-white hover:text-foreground w-full sm:w-auto transition-transform duration-200 hover:scale-[1.02]">
                 <a href="#servicos">
                   Nossos serviços
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-base sm:text-lg px-6 sm:px-8 border-primary bg-primary/20 text-white hover:bg-primary hover:text-primary-foreground w-full sm:w-auto hover:scale-105 transition-transform">
+              <Button size="lg" variant="outline" asChild className="text-base sm:text-lg px-6 sm:px-8 border-primary bg-primary/20 text-white hover:bg-primary hover:text-primary-foreground w-full sm:w-auto transition-transform duration-200 hover:scale-[1.02]">
                 <Link to="/vitrine" className="inline-flex items-center justify-center gap-2">
                   <ShoppingBag className="h-5 w-5" />
                   Ver vitrine
@@ -142,10 +119,8 @@ const Hero = () => {
               ].map((stat) => (
                 <motion.div 
                   key={stat.label}
-                  className="text-center p-3 sm:p-4"
+                  className="text-center p-3 sm:p-4 transition-transform duration-200 hover:scale-105"
                   variants={statsVariants}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
                 >
                   <div className="flex justify-center mb-2">
                     <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
@@ -160,50 +135,20 @@ const Hero = () => {
           {/* Visual Element */}
           <motion.div 
             className="hidden lg:flex justify-center items-center"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="relative">
-              <motion.div 
-                className="w-64 h-64 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 rounded-full bg-gradient-to-br from-primary/30 to-accent/20 flex items-center justify-center shadow-glow backdrop-blur-sm"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
-              >
-                <motion.div 
-                  className="w-48 h-48 xl:w-64 xl:h-64 2xl:w-72 2xl:h-72 rounded-full bg-gradient-to-br from-primary/50 to-accent/30 flex items-center justify-center"
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
-                >
-                  <motion.div
-                    animate={{ 
-                      scale: [1, 1.1, 1],
-                    }}
-                    transition={{ 
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                    }}
-                  >
-                    <Battery className="w-24 h-24 xl:w-32 xl:h-32 2xl:w-40 2xl:h-40 text-white" strokeWidth={1.5} />
-                  </motion.div>
-                </motion.div>
-              </motion.div>
+              <div className="w-64 h-64 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 rounded-full bg-gradient-to-br from-primary/30 to-accent/20 flex items-center justify-center shadow-glow backdrop-blur-sm">
+                <div className="w-48 h-48 xl:w-64 xl:h-64 2xl:w-72 2xl:h-72 rounded-full bg-gradient-to-br from-primary/50 to-accent/30 flex items-center justify-center">
+                  <Battery className="w-24 h-24 xl:w-32 xl:h-32 2xl:w-40 2xl:h-40 text-white" strokeWidth={1.5} />
+                </div>
+              </div>
               <motion.div 
                 className="absolute -top-2 -right-2 xl:-top-4 xl:-right-4 w-16 h-16 xl:w-24 xl:h-24 rounded-full bg-primary flex items-center justify-center shadow-glow"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  boxShadow: [
-                    '0 0 20px hsl(145 80% 28% / 0.3)',
-                    '0 0 40px hsl(145 80% 28% / 0.5)',
-                    '0 0 20px hsl(145 80% 28% / 0.3)',
-                  ],
-                }}
-                transition={{ 
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
+                animate={{ scale: [1, 1.08, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
               >
                 <Zap className="w-8 h-8 xl:w-12 xl:h-12 text-white" />
               </motion.div>
