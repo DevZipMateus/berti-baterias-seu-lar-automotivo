@@ -33,27 +33,27 @@ const Hero = () => {
               <span className="text-sm font-medium">20 anos de experiência</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight">
               Berti Baterias e Acessórios Automotivos
             </h1>
 
-            <h2 className="text-xl md:text-2xl text-white/80 font-light leading-relaxed">
+            <h2 className="text-lg sm:text-xl md:text-2xl text-white/80 font-light leading-relaxed max-w-2xl">
               Qualidade e agilidade em baterias automotivas e acessórios para seu veículo em Blumenau/SC
             </h2>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" asChild className="text-lg px-8">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+              <Button size="lg" asChild className="text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto">
                 <a href="https://wa.me/554732321020" target="_blank" rel="noopener noreferrer">
                   Solicite um orçamento
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg px-8 border-white bg-white/20 text-white hover:bg-white hover:text-foreground">
+              <Button size="lg" variant="outline" asChild className="text-base sm:text-lg px-6 sm:px-8 border-white bg-white/20 text-white hover:bg-white hover:text-foreground w-full sm:w-auto">
                 <a href="#servicos">
                   Nossos serviços
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg px-8 border-primary bg-primary/20 text-white hover:bg-primary hover:text-primary-foreground">
-                <Link to="/vitrine" className="inline-flex items-center gap-2">
+              <Button size="lg" variant="outline" asChild className="text-base sm:text-lg px-6 sm:px-8 border-primary bg-primary/20 text-white hover:bg-primary hover:text-primary-foreground w-full sm:w-auto">
+                <Link to="/vitrine" className="inline-flex items-center justify-center gap-2">
                   <ShoppingBag className="h-5 w-5" />
                   Ver vitrine
                 </Link>
@@ -61,34 +61,34 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-white/10">
-              <div className="text-center">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-6 sm:pt-8 border-t border-white/10">
+              <div className="text-center p-3 sm:p-4">
                 <div className="flex justify-center mb-2">
-                  <Clock className="h-6 w-6 text-primary" />
+                  <Clock className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
-                <p className="text-2xl font-bold">20+</p>
-                <p className="text-sm text-white/60">Anos no mercado</p>
+                <p className="text-xl sm:text-2xl font-bold">20+</p>
+                <p className="text-xs sm:text-sm text-white/60">Anos no mercado</p>
               </div>
-              <div className="text-center">
+              <div className="text-center p-3 sm:p-4">
                 <div className="flex justify-center mb-2">
-                  <Battery className="h-6 w-6 text-primary" />
+                  <Battery className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
-                <p className="text-2xl font-bold">1000+</p>
-                <p className="text-sm text-white/60">Baterias instaladas</p>
+                <p className="text-xl sm:text-2xl font-bold">1000+</p>
+                <p className="text-xs sm:text-sm text-white/60">Baterias instaladas</p>
               </div>
-              <div className="text-center">
+              <div className="text-center p-3 sm:p-4">
                 <div className="flex justify-center mb-2">
-                  <Shield className="h-6 w-6 text-primary" />
+                  <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
-                <p className="text-2xl font-bold">100%</p>
-                <p className="text-sm text-white/60">Garantia</p>
+                <p className="text-xl sm:text-2xl font-bold">100%</p>
+                <p className="text-xs sm:text-sm text-white/60">Garantia</p>
               </div>
-              <div className="text-center">
+              <div className="text-center p-3 sm:p-4">
                 <div className="flex justify-center mb-2">
-                  <Zap className="h-6 w-6 text-primary" />
+                  <Zap className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
-                <p className="text-2xl font-bold">5★</p>
-                <p className="text-sm text-white/60">Avaliação Google</p>
+                <p className="text-xl sm:text-2xl font-bold">5★</p>
+                <p className="text-xs sm:text-sm text-white/60">Avaliação Google</p>
               </div>
             </div>
           </div>
@@ -96,13 +96,13 @@ const Hero = () => {
           {/* Visual Element */}
           <div className="hidden lg:flex justify-center items-center animate-fade-in-right">
             <div className="relative">
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary/30 to-accent/20 flex items-center justify-center shadow-glow backdrop-blur-sm">
-                <div className="w-64 h-64 rounded-full bg-gradient-to-br from-primary/50 to-accent/30 flex items-center justify-center">
-                  <Battery className="w-32 h-32 text-white" strokeWidth={1.5} />
+              <div className="w-64 h-64 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 rounded-full bg-gradient-to-br from-primary/30 to-accent/20 flex items-center justify-center shadow-glow backdrop-blur-sm">
+                <div className="w-48 h-48 xl:w-64 xl:h-64 2xl:w-72 2xl:h-72 rounded-full bg-gradient-to-br from-primary/50 to-accent/30 flex items-center justify-center">
+                  <Battery className="w-24 h-24 xl:w-32 xl:h-32 2xl:w-40 2xl:h-40 text-white" strokeWidth={1.5} />
                 </div>
               </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-primary flex items-center justify-center shadow-glow animate-pulse">
-                <Zap className="w-12 h-12 text-white" />
+              <div className="absolute -top-2 -right-2 xl:-top-4 xl:-right-4 w-16 h-16 xl:w-24 xl:h-24 rounded-full bg-primary flex items-center justify-center shadow-glow animate-pulse">
+                <Zap className="w-8 h-8 xl:w-12 xl:h-12 text-white" />
               </div>
             </div>
           </div>

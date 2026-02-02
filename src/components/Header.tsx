@@ -35,20 +35,20 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-20 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-16 sm:h-18 lg:h-20 ${
         isScrolled || !isHomePage
           ? 'bg-background/95 backdrop-blur-md shadow-card'
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 h-full">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
               src={logo}
               alt="Berti Baterias e Acessórios Automotivos - Logo"
-              className="h-12 w-auto"
+              className="h-9 sm:h-10 lg:h-12 w-auto"
             />
           </Link>
 
