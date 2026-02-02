@@ -35,7 +35,7 @@ const vehicleTypes = [
 
 const Services = () => {
   return (
-    <section id="servicos" className="relative py-24 text-white">
+    <section id="servicos" className="relative py-16 sm:py-20 lg:py-24 text-white">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -44,28 +44,28 @@ const Services = () => {
         <div className="absolute inset-0 bg-black/85" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16 animate-fade-in">
+          <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">
             O que oferecemos
           </span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 sm:mb-4">
             Nossos serviços
           </h2>
-          <p className="text-white/70 max-w-2xl mx-auto text-lg">
+          <p className="text-white/70 max-w-2xl mx-auto text-base sm:text-lg px-4">
             Oferecemos uma gama completa de serviços para manter seu veículo sempre funcionando.
           </p>
         </div>
 
         {/* Services Grid with Image */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-10 sm:mb-12 lg:mb-16">
           {/* Image Column */}
-          <div className="lg:row-span-2 animate-fade-in">
+          <div className="md:col-span-2 lg:col-span-1 lg:row-span-2 animate-fade-in order-last lg:order-first">
             <img 
               src={batteryInstallation} 
               alt="Instalação profissional de bateria automotiva" 
-              className="rounded-2xl shadow-glow object-cover w-full h-full min-h-[300px]"
+              className="rounded-xl sm:rounded-2xl shadow-glow object-cover w-full h-48 sm:h-64 lg:h-full lg:min-h-[300px]"
             />
           </div>
 
@@ -73,52 +73,52 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 animate-fade-in"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:bg-white/10 transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
-                <service.icon className="h-7 w-7 text-primary" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-primary/20 flex items-center justify-center mb-3 sm:mb-4">
+                <service.icon className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
               </div>
-              <h3 className="text-lg font-display font-bold mb-2">{service.title}</h3>
-              <p className="text-white/60 text-sm">{service.description}</p>
+              <h3 className="text-base sm:text-lg font-display font-bold mb-2">{service.title}</h3>
+              <p className="text-white/60 text-xs sm:text-sm">{service.description}</p>
             </div>
           ))}
         </div>
 
         {/* Vehicle Types */}
-        <div className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-3xl p-8 md:p-12">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-display font-bold mb-2">
+        <div className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 lg:p-12">
+          <div className="text-center mb-6 sm:mb-8">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold mb-2">
               Atendemos todos os tipos de veículos
             </h3>
-            <p className="text-white/70">
+            <p className="text-white/70 text-sm sm:text-base">
               Trabalhamos com baterias para diversos tipos de veículos e aplicações.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
             {vehicleTypes.map((vehicle) => (
               <div key={vehicle.label} className="text-center">
-                <div className="w-16 h-16 mx-auto rounded-full bg-primary/20 flex items-center justify-center mb-3">
-                  <vehicle.icon className="h-8 w-8 text-primary" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-full bg-primary/20 flex items-center justify-center mb-2 sm:mb-3">
+                  <vehicle.icon className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
-                <p className="font-medium">{vehicle.label}</p>
+                <p className="font-medium text-sm sm:text-base">{vehicle.label}</p>
               </div>
             ))}
           </div>
 
           {/* Special Offer */}
-          <div className="bg-primary rounded-2xl p-6 md:p-8 text-center">
-            <div className="flex justify-center mb-4">
-              <Clock className="h-10 w-10 text-primary-foreground" />
+          <div className="bg-primary rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 text-center">
+            <div className="flex justify-center mb-3 sm:mb-4">
+              <Clock className="h-8 w-8 sm:h-10 sm:w-10 text-primary-foreground" />
             </div>
-            <h4 className="text-xl md:text-2xl font-display font-bold text-primary-foreground mb-2">
+            <h4 className="text-lg sm:text-xl md:text-2xl font-display font-bold text-primary-foreground mb-2">
               Instalação grátis!
             </h4>
-            <p className="text-primary-foreground/80 mb-4">
+            <p className="text-primary-foreground/80 mb-4 text-sm sm:text-base">
               Na compra de baterias, ganhe a instalação com todos os cuidados para seu carro.
             </p>
-            <Button size="lg" variant="secondary" asChild>
+            <Button size="lg" variant="secondary" asChild className="w-full sm:w-auto">
               <a href="https://wa.me/554732321020" target="_blank" rel="noopener noreferrer">
                 Aproveite agora
               </a>

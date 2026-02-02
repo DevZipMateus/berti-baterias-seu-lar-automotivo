@@ -31,8 +31,8 @@ const Vitrine = () => {
       <main 
         className="w-full flex-1"
         style={{ 
-          marginTop: '80px', 
-          height: 'calc(100vh - 80px)' 
+          marginTop: '64px', 
+          height: 'calc(100vh - 64px)' 
         }}
       >
         <iframe 
