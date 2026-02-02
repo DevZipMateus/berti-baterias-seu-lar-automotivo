@@ -10,26 +10,26 @@ const About = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.1,
       },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, x: -30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      x: 0,
-      transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+      y: 0,
+      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
   const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+      transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
@@ -49,8 +49,8 @@ const About = () => {
           className="text-center mb-10 sm:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">
             Nossa história
@@ -70,7 +70,7 @@ const About = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: '-50px' }}
           >
             {[
               {
@@ -91,16 +91,12 @@ const About = () => {
             ].map((item) => (
               <motion.div 
                 key={item.title}
-                className="flex items-start gap-4"
+                className="flex items-start gap-4 group"
                 variants={itemVariants}
               >
-                <motion.div 
-                  className="p-3 rounded-xl bg-primary/10"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
+                <div className="p-3 rounded-xl bg-primary/10 transition-colors duration-200 group-hover:bg-primary/20">
                   <item.icon className="h-6 w-6 text-primary" />
-                </motion.div>
+                </div>
                 <div>
                   <h3 className="text-xl font-display font-bold text-foreground mb-2">
                     {item.title}
@@ -117,20 +113,20 @@ const About = () => {
               className="grid grid-cols-2 gap-3 sm:gap-4 pt-4 sm:pt-6"
               variants={itemVariants}
             >
-              <motion.img 
-                src={storeInterior} 
-                alt="Interior da loja Berti Baterias com prateleiras de produtos automotivos" 
-                className="rounded-lg sm:rounded-xl shadow-card object-cover h-32 sm:h-40 lg:h-48 w-full"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.img 
-                src={batteryTesting} 
-                alt="Mecânico testando bateria automotiva com equipamento de diagnóstico" 
-                className="rounded-lg sm:rounded-xl shadow-card object-cover h-32 sm:h-40 lg:h-48 w-full"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              />
+              <div className="overflow-hidden rounded-lg sm:rounded-xl shadow-card">
+                <img 
+                  src={storeInterior} 
+                  alt="Interior da loja Berti Baterias com prateleiras de produtos automotivos" 
+                  className="object-cover h-32 sm:h-40 lg:h-48 w-full transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg sm:rounded-xl shadow-card">
+                <img 
+                  src={batteryTesting} 
+                  alt="Mecânico testando bateria automotiva com equipamento de diagnóstico" 
+                  className="object-cover h-32 sm:h-40 lg:h-48 w-full transition-transform duration-300 hover:scale-105"
+                />
+              </div>
             </motion.div>
           </motion.div>
 
@@ -140,7 +136,7 @@ const About = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: '-50px' }}
           >
             {[
               { icon: Target, title: 'Missão', text: 'Oferecer produtos e serviços de qualidade com agilidade e preço justo.' },
@@ -149,21 +145,12 @@ const About = () => {
             ].map((card) => (
               <motion.div 
                 key={card.title}
-                className={`bg-card/90 backdrop-blur-sm p-5 sm:p-6 rounded-xl sm:rounded-2xl shadow-card border border-border ${card.span ? 'sm:col-span-2' : ''}`}
+                className={`bg-card/90 backdrop-blur-sm p-5 sm:p-6 rounded-xl sm:rounded-2xl shadow-card border border-border transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 ${card.span ? 'sm:col-span-2' : ''}`}
                 variants={cardVariants}
-                whileHover={{ 
-                  y: -8,
-                  boxShadow: '0 20px 40px hsl(0 0% 0% / 0.15)',
-                }}
-                transition={{ duration: 0.3 }}
               >
-                <motion.div 
-                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mb-3 sm:mb-4"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mb-3 sm:mb-4">
                   <card.icon className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
-                </motion.div>
+                </div>
                 <h3 className="text-base sm:text-lg font-display font-bold text-foreground mb-2">{card.title}</h3>
                 <p className="text-muted-foreground text-xs sm:text-sm">
                   {card.text}

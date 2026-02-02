@@ -55,17 +55,17 @@ const Products = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.05,
+        staggerChildren: 0.04,
       },
     },
   };
 
   const cardVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.9 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
-      scale: 1,
-      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
+      y: 0,
+      transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
@@ -85,8 +85,8 @@ const Products = () => {
           className="text-center mb-10 sm:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">
             Catálogo completo
@@ -102,20 +102,16 @@ const Products = () => {
         {/* Featured Images */}
         <motion.div 
           className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-10 lg:mb-12"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <motion.div 
-            className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-card group"
-            whileHover={{ y: -5 }}
-            transition={{ duration: 0.3 }}
-          >
+          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-card group">
             <img 
               src={batteriesCollection} 
               alt="Coleção de baterias automotivas de diversos tamanhos" 
-              className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+              className="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 sm:p-6">
               <div>
@@ -123,16 +119,12 @@ const Products = () => {
                 <p className="text-white/80 text-xs sm:text-sm">Para todos os tipos de veículos</p>
               </div>
             </div>
-          </motion.div>
-          <motion.div 
-            className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-card group"
-            whileHover={{ y: -5 }}
-            transition={{ duration: 0.3 }}
-          >
+          </div>
+          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-card group">
             <img 
               src={accessoriesDisplay} 
               alt="Display de acessórios automotivos incluindo calotas, tapetes e palhetas" 
-              className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+              className="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 sm:p-6">
               <div>
@@ -140,50 +132,28 @@ const Products = () => {
                 <p className="text-white/80 text-xs sm:text-sm">Variedade completa para seu carro</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
 
         {/* Vitrine Section */}
         <motion.div 
           className="mb-8 sm:mb-10 lg:mb-12"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <motion.div 
-            className="bg-gradient-to-r from-primary to-accent rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 lg:p-12 text-white relative overflow-hidden"
-            whileHover={{ scale: 1.01 }}
-            transition={{ duration: 0.3 }}
-          >
+          <div className="bg-gradient-to-r from-primary to-accent rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 lg:p-12 text-white relative overflow-hidden">
             {/* Background decoration */}
-            <motion.div 
-              className="absolute top-0 right-0 w-32 sm:w-48 lg:w-64 h-32 sm:h-48 lg:h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"
-              animate={{ 
-                scale: [1, 1.2, 1],
-                rotate: [0, 90, 0],
-              }}
-              transition={{ duration: 10, repeat: Infinity }}
-            />
-            <motion.div 
-              className="absolute bottom-0 left-0 w-24 sm:w-36 lg:w-48 h-24 sm:h-36 lg:h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"
-              animate={{ 
-                scale: [1.2, 1, 1.2],
-                rotate: [0, -90, 0],
-              }}
-              transition={{ duration: 8, repeat: Infinity }}
-            />
+            <div className="absolute top-0 right-0 w-32 sm:w-48 lg:w-64 h-32 sm:h-48 lg:h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-24 sm:w-36 lg:w-48 h-24 sm:h-36 lg:h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
             
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
               <div className="flex-1 text-center md:text-left">
-                <motion.div 
-                  className="inline-flex items-center gap-2 bg-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4"
-                  animate={{ y: [0, -3, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
+                <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4">
                   <ShoppingBag className="h-3 w-3 sm:h-4 sm:w-4" />
                   <span className="text-xs sm:text-sm font-medium">Loja online</span>
-                </motion.div>
+                </div>
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold mb-2 sm:mb-3">
                   Conheça nossa vitrine virtual
                 </h3>
@@ -191,7 +161,7 @@ const Products = () => {
                   Explore nossos produtos com preços, descrições e fotos. 
                   Veja tudo o que temos disponível para você!
                 </p>
-                <Button size="lg" variant="secondary" asChild className="text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto hover:scale-105 transition-transform">
+                <Button size="lg" variant="secondary" asChild className="text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto transition-transform duration-200 hover:scale-[1.02]">
                   <Link to="/vitrine" className="inline-flex items-center justify-center gap-2">
                     <ShoppingBag className="h-4 w-4 sm:h-5 sm:w-5" />
                     Acessar vitrine
@@ -200,20 +170,13 @@ const Products = () => {
                 </Button>
               </div>
               
-              <motion.div 
-                className="flex-shrink-0 hidden sm:block"
-                animate={{ 
-                  y: [0, -10, 0],
-                  rotate: [0, 5, 0, -5, 0],
-                }}
-                transition={{ duration: 4, repeat: Infinity }}
-              >
+              <div className="flex-shrink-0 hidden sm:block">
                 <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full bg-white/20 flex items-center justify-center">
                   <ShoppingBag className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 text-white" />
                 </div>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
 
         {/* Products Grid */}
@@ -222,26 +185,17 @@ const Products = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
+          viewport={{ once: true, margin: '-30px' }}
         >
           {products.map((product) => (
             <motion.div
               key={product.title}
-              className="group bg-card/90 backdrop-blur-sm border border-border rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 transition-all duration-300"
+              className="group bg-card/90 backdrop-blur-sm border border-border rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 transition-all duration-300 hover:shadow-card-hover hover:border-primary/30 hover:-translate-y-1"
               variants={cardVariants}
-              whileHover={{ 
-                y: -8,
-                borderColor: 'hsl(145 80% 28% / 0.3)',
-                boxShadow: '0 20px 40px hsl(0 0% 0% / 0.12)',
-              }}
             >
-              <motion.div 
-                className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-lg sm:rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center mb-3 sm:mb-4 transition-colors"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6 }}
-              >
+              <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-lg sm:rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center mb-3 sm:mb-4 transition-colors duration-200">
                 <product.icon className="h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7 text-primary" />
-              </motion.div>
+              </div>
               <h3 className="text-sm sm:text-base lg:text-lg font-display font-bold text-foreground mb-1 sm:mb-2">
                 {product.title}
               </h3>
@@ -253,15 +207,15 @@ const Products = () => {
         {/* CTA */}
         <motion.div 
           className="text-center"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="text-muted-foreground mb-4">
             Não encontrou o que procura? Entre em contato conosco!
           </p>
-          <Button size="lg" asChild className="hover:scale-105 transition-transform">
+          <Button size="lg" asChild className="transition-transform duration-200 hover:scale-[1.02]">
             <a href="https://wa.me/554732321020" target="_blank" rel="noopener noreferrer">
               Consultar disponibilidade
             </a>
