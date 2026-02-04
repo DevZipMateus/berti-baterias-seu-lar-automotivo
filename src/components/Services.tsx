@@ -55,15 +55,13 @@ const Services = () => {
   };
 
   return (
-    <section id="servicos" className="relative py-16 sm:py-20 lg:py-24 text-white overflow-hidden">
-      {/* Background Image Layer */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${servicesBg})` }}
-      />
-      {/* Dark Overlay Layer */}
-      <div className="absolute inset-0 z-[1] bg-black/80" />
-
+    <section
+      id="servicos"
+      className="relative py-16 sm:py-20 lg:py-24 text-white overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `linear-gradient(hsl(0 0% 0% / 0.8), hsl(0 0% 0% / 0.8)), url(${servicesBg})`,
+      }}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div 
