@@ -113,7 +113,7 @@ const Hero = () => {
             >
               {[
                 { icon: Clock, value: '20+', label: 'Anos no mercado' },
-                { icon: Battery, value: '1000+', label: 'Baterias instaladas' },
+                { icon: Battery, value: '20000+', label: 'Baterias instaladas' },
                 { icon: Shield, value: '100%', label: 'Garantia' },
                 { icon: Zap, value: '5★', label: 'Avaliação Google' },
               ].map((stat) => (
