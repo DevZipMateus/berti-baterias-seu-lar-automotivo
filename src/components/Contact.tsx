@@ -189,14 +189,14 @@ const Contact = () => {
           >
             <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-card h-[300px] sm:h-[350px] lg:h-full lg:min-h-[400px] transition-shadow duration-300 hover:shadow-card-hover">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.4!2d-49.0831!3d-26.8867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDUzJzEyLjEiUyA0OcKwMDQnNTkuMiJX!5e0!3m2!1spt-BR!2sbr!4v1609459200000!5m2!1spt-BR!2sbr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.0!2d-49.0547!3d-26.8722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df1900c68c7e8d%3A0x7e8a6e4a3f1b5c2d!2sR.%20Johann%20Sachse%2C%20862%20-%20Badenfurt%2C%20Blumenau%20-%20SC%2C%2089070-400!5e0!3m2!1spt-BR!2sbr!4v1704067200000!5m2!1spt-BR!2sbr"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Localização da Berti Baterias - Rua Johann Sachase, 862, Badenfurt, Blumenau SC"
+                title="Localização da Berti Baterias - Rua Johann Sachse, 862, Badenfurt, Blumenau SC"
               />
             </div>
             <div className="mt-3 sm:mt-4 text-center">
