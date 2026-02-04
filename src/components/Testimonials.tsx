@@ -37,7 +37,7 @@ const Testimonials = () => {
 
           {/* Rating Display */}
           <motion.div 
-            className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 lg:p-12"
+            className="bg-white/20 backdrop-blur-sm border border-white/25 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 lg:p-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
