@@ -108,7 +108,7 @@ const Services = () => {
           {services.map((service) => (
             <motion.div
               key={service.title}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:bg-white/10 hover:border-primary/30 hover:-translate-y-1"
+              className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:bg-white/15 hover:border-primary/30 hover:-translate-y-1"
               variants={cardVariants}
             >
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-primary/20 flex items-center justify-center mb-3 sm:mb-4">
@@ -122,7 +122,7 @@ const Services = () => {
 
         {/* Vehicle Types */}
         <motion.div 
-          className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 lg:p-12"
+          className="bg-primary/15 backdrop-blur-sm border border-primary/25 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 lg:p-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
