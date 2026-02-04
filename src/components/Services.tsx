@@ -55,14 +55,14 @@ const Services = () => {
   };
 
   return (
-    <section id="servicos" className="relative py-16 sm:py-20 lg:py-24 text-white">
-      {/* Background Image */}
+    <section id="servicos" className="relative py-16 sm:py-20 lg:py-24 text-white overflow-hidden">
+      {/* Background Image Layer */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${servicesBg})` }}
-      >
-        <div className="absolute inset-0 bg-black/85" />
-      </div>
+      />
+      {/* Dark Overlay Layer */}
+      <div className="absolute inset-0 z-[1] bg-black/85" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
