@@ -37,15 +37,15 @@ const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center pt-20"
+      className="relative min-h-screen flex items-center pt-20 overflow-hidden"
     >
-      {/* Background Image */}
+      {/* Background Image Layer */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
-      >
-        <div className="absolute inset-0 bg-black/70" />
-      </div>
+      />
+      {/* Dark Overlay Layer */}
+      <div className="absolute inset-0 z-[1] bg-black/80" />
 
       {/* Background Pattern - Simplified */}
       <div className="absolute inset-0 opacity-15 pointer-events-none">
