@@ -14,6 +14,17 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        
+        {/* Vitrine iframe */}
+        <section id="vitrine" className="w-full bg-black">
+          <iframe 
+            src="https://diegobertibaterias.egestor.com.br/vitrine/" 
+            className="w-full border-none"
+            style={{ height: '100vh' }}
+            title="Vitrine - Berti Baterias"
+          />
+        </section>
+
         <About />
         <Services />
         <Products />
